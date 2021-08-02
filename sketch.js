@@ -4,7 +4,7 @@ var iceStupa;
 var rope_clicked_times; 
 var rope;
 var rope1,rope2,rope3,rope4,rope5;
-
+var divBox;
 
 function preload() {
     bg = loadImage('sprites/source.png') 
@@ -52,6 +52,10 @@ rope7 = createSprite(280,390,10,10)
 rope7.visible = false
 rope7.addImage(ropeImg)
 rope7.scale = 0.5       
+divBox = createP('');
+divBox.style('font-size', '16px');
+divBox.position(1000, 500);
+
 }
 
 function draw() {
@@ -74,7 +78,7 @@ function draw() {
   function click(x){
     
     if(x==2){
-      rope1.visible = true
+      rope1.visible = true;
     }
     if(x==4){
       rope2.visible = true
@@ -98,5 +102,8 @@ function draw() {
     if(x==14){
       rope7.visible = true
     }
+
+    if(x%2 == 0 && x <= 14)
+      divBox.html(x/2 + " Ropes made");
      
   }
