@@ -51,59 +51,68 @@ rope6.scale = 0.5
 rope7 = createSprite(280,390,10,10)
 rope7.visible = false
 rope7.addImage(ropeImg)
-rope7.scale = 0.5       
-divBox = createP('');
-divBox.style('font-size', '16px');
-divBox.position(1000, 500);
+rope7.scale = 0.5     
+
 
 }
 
 function draw() {
     background(bg)
-    if(keyDown('r')){
+    if(keyWentDown('r')){
       rope_clicked_times += 1;
-      click(rope_clicked_times)
+      click(rope_clicked_times);
+      if(rope_clicked_times >= 7){
+        // since at most 7 ropes can be made, no need to increment rope_clicked_times ..
+        // .. beyond that.
+        rope_clicked_times = 7;
+      }
+      
     }
   
     drawSprites()
     text("X " + World.mouseX + "Y " + World.mouseY, World.mouseX,World.mouseY);
-    textSize(20)
-    text("Press R to measure the distance  with the rope", 49,87)
-    text("rope length 10 units",38,30)
-   
+    textSize(20);
+    text("Press R to measure the distance  with the rope", 49,87);
+    text("rope length 10 units",38,30);
     
+    if(rope_clicked_times >= 1 ){
+      textStyle(BOLD);
+      textSize(25);
+      text(rope_clicked_times+" Ropes made", 1000, 500);
+    }
+
+
   
   }
   
   function click(x){
     
-    if(x==2){
+    if(x==1){
       rope1.visible = true;
     }
-    if(x==4){
+    if(x==2){
       rope2.visible = true
     }
     
-    if(x==6){
+    if(x==3){
       rope3.visible = true
     }
     
-     if(x==8){
+     if(x==4){
       rope4.visible = true
     }
     
-    if(x==10){
+    if(x==5){
       rope5.visible = true
     }
     
-    if(x==12){
+    if(x==6){
       rope6.visible = true
     }
-    if(x==14){
+    if(x==7){
       rope7.visible = true
     }
 
-    if(x%2 == 0 && x <= 14)
-      divBox.html(x/2 + " Ropes made");
+      
      
   }
