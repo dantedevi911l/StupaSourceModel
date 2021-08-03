@@ -91,26 +91,26 @@ function draw() {
       rope1.visible = true;
     }
     if(x==2){
-      rope2.visible = true
+      rope2.visible = true;
     }
     
     if(x==3){
-      rope3.visible = true
+      rope3.visible = true;
     }
     
      if(x==4){
-      rope4.visible = true
+      rope4.visible = true;
     }
     
     if(x==5){
-      rope5.visible = true
+      rope5.visible = true;
     }
     
     if(x==6){
-      rope6.visible = true
+      rope6.visible = true;
     }
     if(x==7){
-      rope7.visible = true
+      rope7.visible = true;
     }
 
       
